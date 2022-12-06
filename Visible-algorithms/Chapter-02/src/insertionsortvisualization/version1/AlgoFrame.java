@@ -1,4 +1,4 @@
-package insertionsortvisualization;
+package insertionsortvisualization.version1;
 
 import java.awt.*;
 import javax.swing.*;
