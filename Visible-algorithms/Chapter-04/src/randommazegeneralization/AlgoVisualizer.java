@@ -32,6 +32,7 @@ public class AlgoVisualizer {
         Position first = new Position(data.entranceX(), data.entranceY() + 1);
         queue.add(first);
         data.visited[first.X()][first.Y()] = true;
+        data.openMist(first.X(), first.Y());
         
         while (!queue.empty()) {
             Position curPos = queue.remove();
@@ -45,6 +46,7 @@ public class AlgoVisualizer {
                     && data.maze[newX][newY] == MazeData.ROAD) {
                     queue.add(new Position(newX, newY));
                     data.visited[newX][newY] = true;
+                    data.openMist(newX, newY);
                     setData(curPos.X() + D[i][0], curPos.Y() + D[i][1]);
                 }
             }

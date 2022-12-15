@@ -71,7 +71,10 @@ public class AlgoFrame extends JFrame {
             
             for (int i = 0; i < data.N(); i++)
                 for (int j = 0; j < data.M(); j++) {
-                    if (data.maze[i][j] == MazeData.WALL)
+                    
+                    if (data.inMist[i][j])
+                        AlgoVisHelper.setColor(g2d, AlgoVisHelper.Black);
+                    else if (data.maze[i][j] == MazeData.WALL)
                         AlgoVisHelper.setColor(g2d, AlgoVisHelper.LightBlue);
                     else
                         AlgoVisHelper.setColor(g2d, AlgoVisHelper.White);
